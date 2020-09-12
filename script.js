@@ -11,7 +11,7 @@ $(document).ready(function () {
         let time = timeArr[i];
 
         let newTable = $('<table>').addClass("table rounded");
-        let hourCell = $('<td>').addClass('col-sm-4');
+        let hourCell = $('<td>').addClass('col-sm-4 text-white');
         hourCell.text(time);
         newTable.append(hourCell);
 
@@ -33,23 +33,20 @@ $(document).ready(function () {
 
         $('.container-fluid').append(newTable);
 
-        saveBtn.on('click', function (){
-            localStorage.setItem(time, input.val());
-        });
-
-        let hourArr = [9,10,11,12,13,14,15,16,17]
+        saveBtn.on('click', function () {
+            localStorage.setItem(time, input.val());    
+        })
+        let hourArr = [9, 10, 11, 12, 13, 14, 15, 16, 17]
         let currentHour = moment().hour();
-        if (currentHour === hourArr[i]){
-            newTable.addClass('bg-danger');
+        if (currentHour === hourArr[i]) {
+            newTable.addClass('bg-success');
         }
-        else if (currentHour > hourArr[i]){
+        else if (currentHour > hourArr[i]) {
             newTable.addClass('bg-secondary');
         }
-        else if (currentHour < hourArr[i]){
-            newTable.addClass('bg-success')
+        else if (currentHour < hourArr[i]) {
+            newTable.addClass('bg-primary')
         }
-       
+
     }
-
-
-});
+})
