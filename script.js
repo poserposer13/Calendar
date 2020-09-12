@@ -49,7 +49,13 @@ $(document).ready(function () {
         let hourArr = [9,10,11,12,13,14,15,16,17]
         let currentHour = moment().hour();
         if (currentHour === hourArr[i]){
-            newTable.addClass('bg-danger')
+            newTable.addClass('bg-danger');
+        }
+        else if (currentHour > hourArr[i]){
+            newTable.addClass('bg-secondary');
+        }
+        else if (currentHour < hourArr[i]){
+            newTable.addClass('bg-success')
         }
        
     }
