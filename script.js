@@ -14,37 +14,32 @@ $(document).ready(function () {
     $('#currentDay').text(output);
 
 
-    let time;
+    let timeArr = ['9:00AM', '10:00AM', '11:00AM', '12:00AM', '1:00PM', '2:00PM', '3:00PM', '4:00PM', '5:00PM'];
+    for (let i = 0; i < timeArr.length; i++) {
+        let time = timeArr[i];
 
-    time = "5:00AM"
+        let newRow = $('<div>').addClass("row");
+        let hourCell = $('<div>').addClass('col-sm-4');
+        hourCell.text(time);
+        newRow.append(hourCell);
 
-    let newRow = $('<div>').addClass("row");
-    
-    let hourCell = $('<div>').addClass('col-sm-4');
-    hourCell.text(time);
-    newRow.append(hourCell);
-    
+        let inputEl = $('<div>').addClass('col-sm-5');
+        let input = $('<input type="text">');
+        input.addClass('input');
+        input.attr('id', time);
+        inputEl.append(input);
+        newRow.append(inputEl);
 
-    let inputEl = $('<div>').addClass('col-sm-5');
-    let input = $('<input type="text">');
-    input.addClass('input');
-    input.attr('id', time);
-    inputEl.append(input);
-    newRow.append(inputEl);
-    
-    
+        let saveEl = $('<div>').addClass('col-sm-3');
+        let saveBtn = $('<button>').addClass('save-btn');
+        saveBtn.attr('date-time');
+        saveBtn.text('save');
+        saveEl.append(saveBtn);
+        newRow.append(saveEl);
 
-    let saveEl = $('<div>').addClass('col-sm-3');
-    let saveBtn = $('<button>').addClass('save-btn');
-    saveBtn.attr('date-time');
-    saveBtn.text('save');
-    saveEl.append(saveBtn);
-    newRow.append(saveEl);
-    
-    $('.container-fluid').append(newRow);
+        $('.container-fluid').append(newRow);
 
-
-
+    }
 
 
 });
