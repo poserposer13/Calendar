@@ -29,6 +29,8 @@ $(document).ready(function () {
         input.attr('id', time);
         inputEl.append(input);
         newRow.append(inputEl);
+        let savedInput = localStorage.getItem(time);
+        input.val(savedInput);
 
         let saveEl = $('<div>').addClass('col-sm-3');
         let saveBtn = $('<button>').addClass('save-btn');
@@ -39,6 +41,9 @@ $(document).ready(function () {
 
         $('.container-fluid').append(newRow);
 
+        saveBtn.on('click', function (){
+            localStorage.setItem(time, input.val());
+        })
     }
 
 
