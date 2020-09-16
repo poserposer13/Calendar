@@ -4,7 +4,7 @@ $(document).ready(function () {
 
     let currentDay = moment().format("dddd, MMMM Do YYYY");
     let dayDisplay = $('#currentDay');
-    dayDisplay.addClass('text-warning')
+    dayDisplay.addClass('text-info')
     dayDisplay.text(currentDay);
 
 
