@@ -19,10 +19,11 @@ $(document).ready(function () {
         hourCell.text(time);
         newTable.append(hourCell);
         
-        let inputEl = $('<td>').addClass('col-sm');
+        let inputEl = $('<td>').addClass('col-sm-6');
         let input = $('<textarea type="text">');
         input.addClass('input');
-        input.addClass('bg-light');
+        input.addClass('w-100')
+        input.addClass('bg-white');
         input.attr('id', time);
         inputEl.append(input);
         newTable.append(inputEl);
@@ -36,7 +37,7 @@ $(document).ready(function () {
         saveEl.append(saveBtn);
         newTable.append(saveEl);
 
-        $('.container').append(newTable);
+        $('.container-fluid').append(newTable);
 
         saveBtn.on('click', function (event) {
             event.preventDefault();
